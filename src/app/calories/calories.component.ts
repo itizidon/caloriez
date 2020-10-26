@@ -1,6 +1,7 @@
+import { secrets } from '../../../secret'
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { environment } from '../../environments/environment'
+
 
 interface nutrition{
 
@@ -44,7 +45,7 @@ export class CaloriesComponent implements OnInit {
   getCalories(){
     let headers: HttpHeaders = new HttpHeaders();
 
-    // headers = headers.set("x-app-id", environment.appId).set("x-remote-user-id", "0").set("x-app-key", environment.appKey).set("x-remote-user-id", environment.remoteId)
+    headers = headers.set("x-app-id", secrets.appId).set("x-remote-user-id", "0").set("x-app-key", secrets.appKey).set("x-remote-user-id", secrets.remoteId)
     this.httpClient.post<any>('https://trackapi.nutritionix.com/v2/natural/nutrients', {query:"2 eggs"}, {headers: headers}).subscribe(
       data => {
         console.log(data)
