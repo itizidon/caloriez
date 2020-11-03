@@ -1,43 +1,46 @@
-<div>
-  <h1>Calories</h1>
-  <h2>List Foods</h2>
-  <form #simpleForm="ngForm" (ngSubmit)="getCalories(simpleForm.value)">
-    <textarea
-      type="text"
-      ngModel
-      name="food"
-      placeholder="ex.2 eggs, 1 apple, 4 bacon slices"
-      rows="10"
-      cols="30"
-    ></textarea>
-    <br />
-    <button>Get Calories</button>
-  </form>
+<div ngClass="homepage-container">
+  <div ngClass="nutrition-value">
+    <h1>Calories</h1>
+    <h2>List Foods</h2>
+    <form #simpleForm="ngForm" (ngSubmit)="getCalories(simpleForm.value)">
+      <textarea
+        type="text"
+        ngModel
+        name="food"
+        placeholder="ex.2 eggs, 1 apple, 4 bacon slices"
+        rows="10"
+        cols="30"
+      ></textarea>
+      <br />
+      <button>Get Calories</button>
+    </form>
 
-  <h3>{{ totalCalories }} Calories</h3>
+    <h3>{{ totalCalories }} Calories</h3>
+  </div>
+  <div ngClass="calories">
+    <h1>Minium Calories</h1>
+    <h2>Inputs</h2>
+    <form #bmrForm="ngForm" (ngSubmit)="getBMR(bmrForm.value)">
+      <input type="number" ngModel name="age" placeholder="input age" />
 
-  <h1>Minium Calories</h1>
-  <h2>Inputs</h2>
-  <form #bmrForm="ngForm" (ngSubmit)="getBMR(bmrForm.value)">
-    <input type="number" ngModel name="age" placeholder="input age" />
+      <legend>Choose your sex:</legend>
+      <label for="male">Male</label>
+      <input type="radio" ngModel name="sex" id="male" value="male" checked />
+      <label for="female">Female</label>
+      <input type="radio" ngModel name="sex" id="female" value="female" />
 
-    <legend>Choose your sex:</legend>
-    <label for="male">Male</label>
-    <input type="radio" ngModel name="sex" id="male" value="male" checked />
-    <label for="female">Female</label>
-    <input type="radio" ngModel name="sex" id="female" value="female" />
+      <br />
+      <input type="number" ngModel name="heightfeet" placeholder="feet" />
+      <input type="number" ngModel name="heightinches" placeholder="inches" />
+      <br />
+      <input type="number" ngModel name="weight" placeholder="lbs" />
 
-    <br>
-    <input type="number" ngModel name="heightfeet" placeholder="feet" />
-    <input type="number" ngModel name="heightinches" placeholder="inches" />
-    <br>
-    <input type="number" ngModel name="weight" placeholder="lbs" />
+      <br />
+      <button>Get BMR</button>
+    </form>
 
-    <br>
-    <button>Get BMR</button>
-  </form>
+    <h3>{{ minimalCalories }} BMR</h3>
 
-  <h3>{{ minimalCalories }} BMR</h3>
-
-  <h3>{{ calorieDeficit}} LBS Gained/Lost for the day</h3>
+    <h3>{{ calorieDeficit }} LBS Gained/Lost for the day</h3>
+  </div>
 </div>

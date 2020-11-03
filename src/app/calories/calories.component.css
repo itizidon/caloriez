@@ -1,0 +1,12 @@
+.homepage-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nutrition-value{
+  padding-right: 100px;
+}
+
+.calories{
+  padding-left: 100px;
+}
