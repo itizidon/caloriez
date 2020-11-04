@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "caloriez"
+    }
+  },
+  "defaultProject": "caloriez",
+  "cli": {
+    "analytics": "720e118b-ea7d-47cf-b386-fa733c88913e"
+  }
 }

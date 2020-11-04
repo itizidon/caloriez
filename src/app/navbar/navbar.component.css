@@ -1,0 +1,15 @@
+.navBar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navBar a {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* header{
+    margin: 0px;
+    padding: 0px;
+    background-color: #C0C0C0;
+} */
